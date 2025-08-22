@@ -1,0 +1,37 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+ta                  # for RSI, MACD, Bollinger Bands
+yfinance            # to fetch stock data if needed
+
+# Deep Learning
+tensorflow
+torch
+torchvision
+torchaudio
+
+# NLP for Sentiment
+transformers
+nltk
+textblob
+
+# Explainability
+shap
+lime
+
+# Reinforcement Learning
+finrl
+gym
+
+# GANs utilities
+keras
+
+# Hidden Markov Model
+hmmlearn
+
+# Quantum optimization
+pennylane
+dwave-ocean-sdk
