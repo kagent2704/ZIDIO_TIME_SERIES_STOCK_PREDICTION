@@ -1,0 +1,31 @@
++---------------------+----------+
+|       Metric        |  Value   |
++---------------------+----------+
+|         AIC         | 25279.87 |
+|         BIC         | 25309.0  |
+|        HQIC         | 25290.45 |
+| No. of Observations |   2517   |
+|  Forecast Horizon   |    30    |
++---------------------+----------+
+
+
+Model: SARIMA
+====================================
+The SARIMA model is a time-series forecasting model.
+
+- ARIMA captures short-term autocorrelation using AR (autoregression),
+  I (integration/differencing), and MA (moving average).
+- SARIMA extends ARIMA by modeling seasonality with seasonal components.
+
+Graph Explanation:
+- Blue line: Actual S&P500 values.
+- Red dashed line: 30-day forecast.
+
+Parameters in Table:
+- AIC, BIC, HQIC: Information criteria (lower = better).
+- No. of Observations: Data points used for fitting.
+- Forecast Horizon: Number of future points predicted.
+
+Inference:
+- SARIMA can model complex temporal patterns.
+- SARIMA is more robust for data with seasonality (e.g., monthly/quarterly cycles).
