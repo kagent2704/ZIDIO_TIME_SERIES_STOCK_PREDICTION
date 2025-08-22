@@ -1,0 +1,400 @@
+PS C:\Users\kashm\Desktop\Python> cd ZIDIO
+PS C:\Users\kashm\Desktop\Python\ZIDIO> & C:/Users/kashm/Desktop/Python/python.exe c:/Users/kashm/Desktop/Python/ZIDIO/main.py
+2025-08-22 22:36:59.561961: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-08-22 22:37:00.688801: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+Running ARIMA and SARIMA models...
+
+============================================================
+ ARIMA MODEL SUMMARY 
+============================================================
+                               SARIMAX Results
+==============================================================================
+Dep. Variable:                  price   No. Observations:                 2610
+Model:                 ARIMA(5, 1, 0)   Log Likelihood              -12674.693
+Date:                Fri, 22 Aug 2025   AIC                          25361.386
+Time:                        22:37:07   BIC                          25396.586
+Sample:                    12-22-2014   HQIC                         25374.138
+                         - 12-20-2024
+Covariance Type:                  opg
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1         -0.0851      0.011     -7.830      0.000      -0.106      -0.064
+ar.L2          0.0350      0.010      3.382      0.001       0.015       0.055
+ar.L3         -0.0188      0.011     -1.662      0.097      -0.041       0.003
+ar.L4         -0.0159      0.012     -1.370      0.171      -0.039       0.007
+ar.L5          0.0086      0.012      0.712      0.476      -0.015       0.032
+sigma2      1359.0627     19.557     69.491      0.000    1320.731    1397.394
+===================================================================================
+Ljung-Box (L1) (Q):                   0.20   Jarque-Bera (JB):              6118.74
+Prob(Q):                              0.65   Prob(JB):                         0.00
+Heteroskedasticity (H):               6.66   Skew:                            -0.69
+Prob(H) (two-sided):                  0.00   Kurtosis:                        10.37
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+
+Forecast (next 30 business days):
+2024-12-23    5929.181438
+2024-12-24    5934.291711
+2024-12-25    5931.137836
+2024-12-26    5930.556984
+2024-12-27    5930.976537
+2024-12-30    5930.884142
+2024-12-31    5931.011971
+2025-01-01    5930.971990
+2025-01-02    5930.969913
+2025-01-03    5930.971374
+2025-01-06    5930.969097
+2025-01-07    5930.971121
+2025-01-08    5930.970529
+2025-01-09    5930.970652
+2025-01-10    5930.970632
+2025-01-13    5930.970597
+2025-01-14    5930.970624
+2025-01-15    5930.970614
+2025-01-16    5930.970617
+2025-01-17    5930.970617
+2025-01-20    5930.970616
+2025-01-21    5930.970617
+2025-01-22    5930.970616
+2025-01-23    5930.970616
+2025-01-24    5930.970616
+2025-01-27    5930.970616
+2025-01-28    5930.970616
+2025-01-29    5930.970616
+2025-01-30    5930.970616
+2025-01-31    5930.970616
+Freq: B, Name: predicted_mean, dtype: float64
+============================================================
+RUNNING THE L-BFGS-B CODE
+
+           * * *
+
+Machine precision = 2.220D-16
+ N =            8     M =           10
+ This problem is unconstrained.
+
+At X0         0 variables are exactly at the bounds
+
+At iterate    0    f=  5.10379D+00    |proj g|=  3.24355D-01
+
+At iterate    5    f=  4.95823D+00    |proj g|=  3.17670D-02
+
+At iterate   10    f=  4.92558D+00    |proj g|=  3.53258D-02
+
+At iterate   15    f=  4.85127D+00    |proj g|=  3.01570D-03
+
+At iterate   20    f=  4.85123D+00    |proj g|=  6.68159D-06
+
+           * * *
+
+Tit   = total number of iterations
+Tnf   = total number of function evaluations
+Tnint = total number of segments explored during Cauchy searches
+Skip  = number of BFGS updates skipped
+Nact  = number of active bounds at final generalized Cauchy point
+Projg = norm of the final projected gradient
+F     = final function value
+
+           * * *
+
+   N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+    8     20     24      1     0     0   6.682D-06   4.851D+00
+  F =   4.8512295140581001
+
+CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL
+
+============================================================
+ SARIMA MODEL SUMMARY
+============================================================
+                                      SARIMAX Results
+============================================================================================
+Dep. Variable:                                price   No. Observations:                 2610
+Model:             SARIMAX(5, 1, 0)x(1, 1, [1], 12)   Log Likelihood              -12661.709
+Date:                              Fri, 22 Aug 2025   AIC                          25339.418
+Time:                                      22:37:13   BIC                          25386.315
+Sample:                                  12-22-2014   HQIC                         25356.411
+                                       - 12-20-2024
+Covariance Type:                                opg
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+ar.L1         -0.0859      0.011     -7.822      0.000      -0.107      -0.064
+ar.L2          0.0324      0.010      3.096      0.002       0.012       0.053
+ar.L3         -0.0200      0.012     -1.718      0.086      -0.043       0.003
+ar.L4         -0.0172      0.012     -1.469      0.142      -0.040       0.006
+ar.L5          0.0066      0.012      0.542      0.588      -0.017       0.031
+ar.S.L12       0.0113      0.014      0.824      0.410      -0.016       0.038
+ma.S.L12      -0.9995      0.072    -13.900      0.000      -1.140      -0.859
+sigma2      1360.1481     98.098     13.865      0.000    1167.879    1552.417
+===================================================================================
+Ljung-Box (L1) (Q):                   0.26   Jarque-Bera (JB):              5973.73
+Prob(Q):                              0.61   Prob(JB):                         0.00
+Heteroskedasticity (H):               6.66   Skew:                            -0.70
+Prob(H) (two-sided):                  0.00   Kurtosis:                        10.30
+===================================================================================
+
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+
+Forecast (next 30 business days):
+2024-12-23    5930.550935
+2024-12-24    5933.281712
+2024-12-25    5932.880718
+2024-12-26    5930.950529
+2024-12-27    5936.202244
+2024-12-30    5936.521595
+2024-12-31    5937.954168
+2025-01-01    5938.706150
+2025-01-02    5941.294203
+2025-01-03    5942.051876
+2025-01-06    5945.628870
+2025-01-07    5947.268173
+2025-01-08    5948.508630
+2025-01-09    5945.836718
+2025-01-10    5948.652963
+2025-01-13    5947.594356
+2025-01-14    5952.047891
+2025-01-15    5952.834465
+2025-01-16    5954.170489
+2025-01-17    5954.697201
+2025-01-20    5957.581175
+2025-01-21    5960.359502
+2025-01-22    5964.036326
+2025-01-23    5964.973407
+2025-01-24    5966.231571
+2025-01-27    5963.498626
+2025-01-28    5966.351165
+2025-01-29    5965.302417
+2025-01-30    5969.746934
+2025-01-31    5970.538784
+Freq: B, Name: predicted_mean, dtype: float64
+============================================================
+
+Running LSTM/GRU model...
+c:\Users\kashm\Desktop\Python\ZIDIO\models\lstm_gru.py:24: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  df['Date'] = pd.to_datetime(df['Date'])
+2025-08-22 22:37:13.763078: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+C:\Users\kashm\Desktop\Python\Lib\site-packages\keras\src\layers\rnn\rnn.py:200: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+
+LSTM Forecast Complete
+Forecasted next 20 business days:
+
+2024-12-23 : 5934.78
+2024-12-24 : 5953.39
+2024-12-25 : 5982.31
+2024-12-26 : 6017.79
+2024-12-27 : 6054.77
+2024-12-30 : 6090.95
+2024-12-31 : 6125.01
+2025-01-01 : 6156.21
+2025-01-02 : 6184.25
+2025-01-03 : 6209.15
+2025-01-06 : 6231.09
+2025-01-07 : 6250.53
+2025-01-08 : 6267.95
+2025-01-09 : 6283.85
+2025-01-10 : 6298.67
+2025-01-13 : 6312.80
+2025-01-14 : 6326.67
+2025-01-15 : 6340.54
+2025-01-16 : 6354.61
+2025-01-17 : 6369.00
+
+Forecast saved at: outputs\lstm_forecast_forecast.csv
+Graph saved at: outputs\lstm_forecast.png
+
+Running HMM model...
+c:\Users\kashm\Desktop\Python\ZIDIO\models\hmm.py:31: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+
+HMM FORECAST SUMMARY
++------------+------------+
+| Date       |   Forecast |
++============+============+
+| 2024-12-23 |    2550.84 |
++------------+------------+
+| 2024-12-24 |    2550.84 |
++------------+------------+
+| 2024-12-25 |    2550.84 |
++------------+------------+
+| 2024-12-26 |    2550.84 |
++------------+------------+
+| 2024-12-27 |    2550.84 |
++------------+------------+
+| 2024-12-30 |    2550.84 |
++------------+------------+
+| 2024-12-31 |    2550.84 |
++------------+------------+
+| 2025-01-01 |    2550.84 |
++------------+------------+
+| 2025-01-02 |    2550.84 |
++------------+------------+
+| 2025-01-03 |    2550.84 |
++------------+------------+
+| 2025-01-06 |    2550.84 |
++------------+------------+
+| 2025-01-07 |    2550.84 |
++------------+------------+
+| 2025-01-08 |    2550.84 |
++------------+------------+
+| 2025-01-09 |    2550.84 |
++------------+------------+
+| 2025-01-10 |    2550.84 |
++------------+------------+
+| 2025-01-13 |    2550.84 |
++------------+------------+
+| 2025-01-14 |    2550.84 |
++------------+------------+
+| 2025-01-15 |    2550.84 |
++------------+------------+
+| 2025-01-16 |    2550.84 |
++------------+------------+
+| 2025-01-17 |    2550.84 |
++------------+------------+
+| 2025-01-20 |    2550.84 |
++------------+------------+
+| 2025-01-21 |    2550.84 |
++------------+------------+
+| 2025-01-22 |    2550.84 |
++------------+------------+
+| 2025-01-23 |    2550.84 |
++------------+------------+
+| 2025-01-24 |    2550.84 |
++------------+------------+
+| 2025-01-27 |    2550.84 |
++------------+------------+
+| 2025-01-28 |    2550.84 |
++------------+------------+
+| 2025-01-29 |    2550.84 |
++------------+------------+
+| 2025-01-30 |    2550.84 |
++------------+------------+
+| 2025-01-31 |    2550.84 |
++------------+------------+
+
+Forecast saved at: outputs\hmm_forecast_forecast.csv
+Graph saved at: outputs\hmm_forecast.png
+
+Running Transformer Encoder-Decoder model...
+Running Transformer-based stock forecaster...
+c:\Users\kashm\Desktop\Python\ZIDIO\models\transformer_forecaster.py:44: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_new.cpp:256.)
+  X, y = torch.tensor(X, dtype=torch.float32), torch.tensor(y, dtype=torch.float32)
+Epoch 1/3, Loss: 0.138424
+Epoch 2/3, Loss: 8.411328
+Epoch 3/3, Loss: 2.706059
+Forecast saved to outputs\transformer_forecast.csv
+
+Running Ensemble model...
+
+ENSEMBLE FORECAST SUMMARY
++----------+-----------------------+
+| Model    |   Last Forecast Value |
++==========+=======================+
+| ARIMA    |               5930.97 |
++----------+-----------------------+
+| SARIMA   |               5970.54 |
++----------+-----------------------+
+| LSTM     |               6369    |
++----------+-----------------------+
+| HMM      |               2550.84 |
++----------+-----------------------+
+| Ensemble |               3613.09 |
++----------+-----------------------+
+
+Ensemble graph saved at: outputs\ensemble_forecast.png
+Ensemble report saved at: outputs\ensemble_forecast_ensemble_report.txt
+
+Running Anomaly Detection...
+c:\Users\kashm\Desktop\Python\ZIDIO\models\anomaly.py:23: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+  df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+Anomaly plot saved at: outputs\anomaly_detection.png
+Anomaly CSV saved at: outputs\anomaly_detection_anomalies.csv
+
+Running Sentiment Analysis...
+Skipping 2025-07-17: outside NewsAPI free plan range
+Skipping 2025-07-20: outside NewsAPI free plan range
+Fetching news for 2025-08-01: from 2025-07-29 to 2025-08-04
+Sentiment CSV saved at: outputs\sentiment_scores.csv
+Sentiment plot saved at: outputs\sentiment_plot.png
+
+Running RL Trading Agent...
+Episode 1/50 - Final Portfolio Value: 18728.09
+Episode 2/50 - Final Portfolio Value: 15913.88
+Episode 3/50 - Final Portfolio Value: 19601.41
+Episode 4/50 - Final Portfolio Value: 19447.15
+Episode 5/50 - Final Portfolio Value: 24291.74
+Episode 6/50 - Final Portfolio Value: 20645.23
+Episode 7/50 - Final Portfolio Value: 17358.55
+Episode 8/50 - Final Portfolio Value: 17135.24
+Episode 9/50 - Final Portfolio Value: 18665.98
+Episode 10/50 - Final Portfolio Value: 15254.06
+Episode 11/50 - Final Portfolio Value: 15072.76
+Episode 12/50 - Final Portfolio Value: 12546.20
+Episode 13/50 - Final Portfolio Value: 23438.48
+Episode 14/50 - Final Portfolio Value: 23469.17
+Episode 15/50 - Final Portfolio Value: 22508.97
+Episode 16/50 - Final Portfolio Value: 15715.30
+Episode 17/50 - Final Portfolio Value: 14034.07
+Episode 18/50 - Final Portfolio Value: 22873.26
+Episode 19/50 - Final Portfolio Value: 18174.70
+Episode 20/50 - Final Portfolio Value: 17834.24
+Episode 21/50 - Final Portfolio Value: 19030.25
+Episode 22/50 - Final Portfolio Value: 19796.44
+Episode 23/50 - Final Portfolio Value: 18996.02
+Episode 24/50 - Final Portfolio Value: 17822.90
+Episode 25/50 - Final Portfolio Value: 13903.38
+Episode 26/50 - Final Portfolio Value: 19091.85
+Episode 27/50 - Final Portfolio Value: 20163.74
+Episode 28/50 - Final Portfolio Value: 20118.66
+Episode 29/50 - Final Portfolio Value: 20473.34
+Episode 30/50 - Final Portfolio Value: 18723.85
+Episode 31/50 - Final Portfolio Value: 18208.12
+Episode 32/50 - Final Portfolio Value: 20262.87
+Episode 33/50 - Final Portfolio Value: 18296.59
+Episode 34/50 - Final Portfolio Value: 22014.78
+Episode 35/50 - Final Portfolio Value: 13959.03
+Episode 36/50 - Final Portfolio Value: 21202.47
+Episode 37/50 - Final Portfolio Value: 21273.23
+Episode 38/50 - Final Portfolio Value: 18063.08
+Episode 39/50 - Final Portfolio Value: 15108.32
+Episode 40/50 - Final Portfolio Value: 19963.31
+Episode 41/50 - Final Portfolio Value: 20093.97
+Episode 42/50 - Final Portfolio Value: 16698.38
+Episode 43/50 - Final Portfolio Value: 17991.26
+Episode 44/50 - Final Portfolio Value: 22704.81
+Episode 45/50 - Final Portfolio Value: 19677.29
+Episode 46/50 - Final Portfolio Value: 23064.11
+Episode 47/50 - Final Portfolio Value: 24612.54
+Episode 48/50 - Final Portfolio Value: 17934.68
+Episode 49/50 - Final Portfolio Value: 24481.24
+Episode 50/50 - Final Portfolio Value: 15920.08
+RL trading plot saved at: outputs\rl_agent_trading.png
+RL agent model saved at: outputs\rl_agent.pth
+
+Running GAN model for synthetic stock sequences...
+Epoch 50/500, Loss D: 25.3138, Loss G: 0.6433
+Epoch 100/500, Loss D: 6.2292, Loss G: 1.5820
+Epoch 150/500, Loss D: 5.7699, Loss G: 1.9633
+Epoch 200/500, Loss D: 1.2803, Loss G: 2.1330
+Epoch 250/500, Loss D: 1.7611, Loss G: 2.4369
+Epoch 300/500, Loss D: 10.6591, Loss G: 1.4174
+Epoch 350/500, Loss D: 9.2146, Loss G: 1.5889
+Epoch 400/500, Loss D: 14.2387, Loss G: 0.3699
+Epoch 450/500, Loss D: 13.7702, Loss G: 0.2868
+Epoch 500/500, Loss D: 4.8964, Loss G: 1.9458
+GAN synthetic sequences plot saved at: outputs\gan_synthetic.png
+GAN synthetic sequences saved at: outputs\gan_synthetic.csv
+
+Running SHAP & LIME explainers...
+ExactExplainer explainer: 504it [00:36, 13.72it/s]
+SHAP summary plot saved: outputs\shap_summary.png
+LIME explanation saved: outputs\lime_explanation.png
+
+All models completed. Graphs and reports saved in 'outputs/' directory.
+PS C:\Users\kashm\Desktop\Python\ZIDIO> 
