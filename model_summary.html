@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>S&P 500 Forecasting Models Summary</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; color: #333; }
+  h1, h2, h3 { color: #2c3e50; }
+  pre { background: #ecf0f1; padding: 15px; border-radius: 5px; overflow-x: auto; }
+  img { max-width: 100%; height: auto; display: block; margin: 10px 0; border: 1px solid #ddd; }
+  table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  th { background-color: #34495e; color: white; }
+  .section { margin-bottom: 50px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+</style>
+</head>
+<body>
+
+<h1>S&amp;P 500 Stock Price Forecasting Models</h1>
+
+<div class="section">
+  <h2>1. ARIMA Model Summary & Forecast</h2>
+  <pre>
+Dep. Variable: price   No. Observations: 2610
+Model: ARIMA(5, 1, 0)   
+Log Likelihood: -12674.693
+AIC: 25361.386
+BIC: 25396.586
+
+Forecast (next 30 business days):
+2024-12-23: 5929.18
+2024-12-24: 5934.29
+...
+2025-01-31: 5930.97
+  </pre>
+  <img src="outputs/arima_forecast.png" alt="ARIMA Forecast Plot" />
+</div>
+
+<div class="section">
+  <h2>2. SARIMA Model Summary & Forecast</h2>
+  <pre>
+Dep. Variable: price   No. Observations: 2610
+Model: SARIMAX(5,1,0)(1,1,[1],12)
+Log Likelihood: -12661.709
+AIC: 25339.418
+BIC: 25386.315
+
+Forecast (next 30 business days):
+2024-12-23: 5930.55
+2024-12-24: 5933.28
+...
+2025-01-31: 5970.54
+  </pre>
+  <img src="outputs/sarima_forecast.png" alt="SARIMA Forecast Plot" />
+</div>
+
+<div class="section">
+  <h2>3. LSTM Model Forecast</h2>
+  <pre>
+Forecasted next 20 business days:
+2024-12-23: 5920.34
+2024-12-24: 5914.68
+...
+2025-01-17: 5907.10
+
+Forecast saved at: outputs/lstm_forecast_forecast.csv
+  </pre>
+  <img src="outputs/lstm_forecast.png" alt="LSTM Forecast Plot" />
+</div>
+
+<div class="section">
+  <h2>4. Hidden Markov Model Forecast</h2>
+  <pre>
+Forecast for 30 business days:
+Values steady at about 2550.84 for next 30 days.
+
+Forecast saved at: outputs/hmm_forecast_forecast.csv
+  </pre>
+  <img src="outputs/hmm_forecast.png" alt="HMM Forecast Plot" />
+</div>
+
+<div class="section">
+  <h2>5. Transformer Encoder-Decoder Model Forecast</h2>
+  <img src="outputs/transformer_forecast.png" alt="Transformer Forecast Plot" />
+  <p>Forecast saved at: outputs/transformer_forecast.csv</p>
+</div>
+
+<div class="section">
+  <h2>6. Ensemble Forecast Summary</h2>
+  <pre>
+Model             Last Forecast Value
+------------------------------------
+ARIMA             5930.97
+SARIMA            5970.54
+LSTM              5907.10
+HMM               2550.84
+Ensemble          3613.09
+
+Ensemble graph saved at: outputs/ensemble_forecast.png
+  </pre>
+  <img src="outputs/ensemble_forecast.png" alt="Ensemble Forecast Plot" />
+</div>
+
+<div class="section">
+  <h2>7. Anomaly Detection Results</h2>
+  <img src="outputs/anomaly_detection.png" alt="Anomaly Detection Plot" />
+  <p>Anomalies CSV saved at: outputs/anomaly_detection_anomalies.csv</p>
+</div>
+
+<div class="section">
+  <h2>8. Sentiment Analysis around Shock Dates</h2>
+  <img src="outputs/sentiment_plot.png" alt="Sentiment Analysis Plot" />
+  <p>Sentiment data saved at: outputs/sentiment_scores.csv</p>
+</div>
+
+<div class="section">
+  <h2>9. Reinforcement Learning Agent Trading Simulation</h2>
+  <img src="outputs/rl_agent_trading.png" alt="RL Trading Agent Portfolio Plot" />
+</div>
+
+<div class="section">
+  <h2>10. GAN Synthetic Stock Sequences</h2>
+  <img src="outputs/gan_synthetic.png" alt="GAN Synthetic Stock Sequences Plot" />
+  <p>Synthetic sequences saved at: outputs/gan_synthetic.csv</p>
+</div>
+
+<div class="section">
+  <h2>11. SHAP & LIME Model Explainability</h2>
+  <img src="outputs/shap_summary.png" alt="SHAP Summary Plot" />
+  <img src="outputs/lime_explanation.png" alt="LIME Explanation Plot" />
+</div>
+
+<hr />
+<h2>Forecasting Models Comparison</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Precision</th>
+      <th>Speed (Training & Forecast)</th>
+      <th>Accuracy</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ARIMA</td>
+      <td>Moderate to good for linear trends</td>
+      <td>Fast training, fast forecast</td>
+      <td>Good for linear, stationary data</td>
+      <td>Baseline classical time series model; interpretable</td>
+    </tr>
+    <tr>
+      <td>SARIMA</td>
+      <td>Better on seasonal patterns</td>
+      <td>Moderate training, fast forecast</td>
+      <td>Improved accuracy over ARIMA with seasonality</td>
+      <td>Captures seasonality; more parameters than ARIMA</td>
+    </tr>
+    <tr>
+      <td>LSTM</td>
+      <td>High precision capturing nonlinearities</td>
+      <td>Slower training; moderately fast forecasting</td>
+      <td>Generally more accurate for complex patterns</td>
+      <td>Requires more data and tuning; captures long-term dependencies</td>
+    </tr>
+    <tr>
+      <td>HMM</td>
+      <td>Moderate; models hidden regimes</td>
+      <td>Moderate training and forecast speed</td>
+      <td>Good for regime switching but output flat here</td>
+      <td>Captures market states; may produce flat forecasts</td>
+    </tr>
+    <tr>
+      <td>Transformer</td>
+      <td>High precision with global attention</td>
+      <td>Moderate training; fast inference</td>
+      <td>State-of-the-art on sequence data</td>
+      <td>Efficient long-range dependency modeling</td>
+    </tr>
+    <tr>
+      <td>Ensemble</td>
+      <td>Highest precision by combining models</td>
+      <td>Depends on models combined (slower overall)</td>
+      <td>More robust, reduces single-model bias</td>
+      <td>Balances strengths; best for production use</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
