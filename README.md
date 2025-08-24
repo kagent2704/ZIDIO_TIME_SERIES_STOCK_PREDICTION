@@ -5,7 +5,7 @@ The repository contains all the wise projects done at the ZIDIO internship. Upda
 2. Models Applied to the dataset:
    1. Forecasting: ARIMA-SARIMA, LSTM-GRU, HMM, TRANSFORMER, ENSEMBLE
    2. REINFORCEMENT LEARNING TRADING AGENT
-   3. GCN
+   3. GAN
    4. ANOMALY DETECTION
    5. SENTIMENT ANALYSIS
    6. EXPLAINERS: SHAP-LIME
