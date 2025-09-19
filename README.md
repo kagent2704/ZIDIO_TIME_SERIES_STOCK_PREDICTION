@@ -1,4 +1,4 @@
-# ZIDIO_DATA_SCIENCE_INTERNSHIP
+# ZIDIO_DATA_SCIENCE_INTERNSHIP_TIME_SERIES_STOCK_PREDICTION
 The repository contains all the wise projects done at the ZIDIO internship. Updated as and when completed
 **Month 1:** Time-series Data forecasting
 1. Used the S&P500 dataset. The S&P500 dataset is a collection of the top 500 most traded companies of the US market.
